@@ -11,7 +11,7 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = language === 'ar' ? [
-    { name: 'ا��رئيسية', href: '/' },
+    { name: 'الرئيسية', href: '/' },
     { name: 'العظام', href: '/anatomy/skeletal' },
     { name: 'المفاصل', href: '/anatomy/joints' },
     { name: 'الأنسجة', href: '/anatomy/tissues' },
@@ -33,7 +33,6 @@ export default function Header() {
   return (
     <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <nav className="container-main flex justify-between items-center py-4">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="bg-white text-blue-600 rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg">
             MJ
@@ -44,7 +43,6 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {menuItems.map((item) => (
             <Link
@@ -57,7 +55,6 @@ export default function Header() {
           ))}
         </div>
 
-        {/* Language Toggle & Mobile Menu */}
         <div className="flex items-center gap-4">
           <button
             onClick={() => setLanguage(language === 'ar' ? 'en' : 'ar')}
@@ -73,7 +70,6 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-blue-700 border-t border-blue-500" dir={language === 'ar' ? 'rtl' : 'ltr'}>
           <div className="container-main py-4 flex flex-col gap-3">
